@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desintoxicación Digital en 21 Días</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .step-card {
+            border-left-width: 4px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .quiz-option {
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+        .quiz-option:hover {
+            transform: scale(1.02);
+            background-color: #2D3748;
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .progress-ring {
+            transition: stroke-dashoffset 0.5s ease;
+        }
+        /* Las clases del modal de compra han sido eliminadas ya que se usa un enlace externo */
+    </style>
+</head>
+<body class="bg-[#111111] text-gray-100">
+
+    <div class="container mx-auto p-4 md:p-8 max-w-7xl">
+
+        <!-- Header -->
+        <header class="text-center my-12 fade-in">
+            <div class="mb-6">
+                <div class="inline-block bg-gradient-to-r from-[#118AB2] to-[#06D6A0] p-1 rounded-lg">
+                    <div class="bg-[#111111] p-3 rounded-md">
+                        <h1 class="text-3xl md:text-5xl font-black text-white uppercase tracking-wider">Vivir sin Scroll</h1>
+                    </div>
+                </div>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-black text-white uppercase tracking-wider mt-4">Desintoxicación Digital</h1>
+            <p class="text-lg md:text-xl text-[#118AB2] mt-4 max-w-3xl mx-auto">Un plan de 21 días para recuperar tu atención, productividad y bienestar mental.</p>
+            <div class="mt-6 flex justify-center space-x-4">
+                <div class="flex items-center text-sm text-gray-400">
+                    <div class="w-3 h-3 rounded-full bg-[#06D6A0] mr-2"></div>
+                    <span>21 días</span>
+                </div>
+                <div class="flex items-center text-sm text-gray-400">
+                    <div class="w-3 h-3 rounded-full bg-[#118AB2] mr-2"></div>
+                    <span>Plan paso a paso</span>
+                </div>
+                <div class="flex items-center text-sm text-gray-400">
+                    <div class="w-3 h-3 rounded-full bg-[#FFD166] mr-2"></div>
+                    <span>Resultados comprobados</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- El Problema -->
+        <section id="problema" class="mb-16 fade-in">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-white">Parte 1: El Problema: La Adicción Oculta</h2>
+                <p class="mt-2 text-gray-300 max-w-3xl mx-auto">Tu atención es el recurso más valioso, y está siendo secuestrada sistemáticamente por diseñadores que buscan mantenerte enganchado.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="bg-gradient-to-br from-[#1A202C] to-[#2D3748] rounded-xl shadow-lg p-6 text-center flex flex-col md:flex-row items-center gap-6 border border-gray-800">
+                    <div class="flex-shrink-0">
+                        <div class="w-24 h-24 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-[#118AB2] to-[#06D6A0] flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-[#118AB2] mb-2">El Costo Real de la Distracción</h3>
+                        <p class="text-gray-300 mb-3">3 horas diarias de scroll pueden representar una pérdida de:</p>
+                        <div class="text-5xl font-black text-[#FF6B6B]">$21,600</div>
+                        <p class="font-bold text-gray-200">AL AÑO (basado en $30/hora)</p>
+                        <p class="text-sm text-gray-400 mt-2">+ Pérdida de productividad, creatividad y bienestar mental</p>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-br from-[#1A202C] to-[#2D3748] rounded-xl shadow-lg p-6 border border-gray-800">
+                    <h3 class="text-xl font-bold text-center text-[#118AB2] mb-4">El Impacto en Tu Cerebro</h3>
+                    <p class="text-center text-gray-300 mb-4">El uso crónico de redes sociales reconfigura tu cerebro, afectando funciones clave. No estás descansando, estás deteriorando tu capacidad cognitiva.</p>
+                    <div class="chart-container">
+                        <canvas id="brainImpactChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Diagnóstico -->
+        <section id="diagnostico" class="bg-gradient-to-br from-[#1A202C] to-[#2D3748] rounded-xl shadow-lg p-8 mb-16 fade-in border border-gray-800">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-white">Parte 2: Tu Diagnóstico Personal</h2>
+                <p class="mt-2 text-gray-300 max-w-3xl mx-auto">Responde honestamente para evaluar tu nivel de dependencia digital. Marca las afirmaciones que apliquen en tu caso.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <div id="quiz-options" class="space-y-3">
+                        <label class="quiz-option flex items-center bg-[#2D3748] p-4 rounded-lg cursor-pointer border border-gray-700">
+                            <input type="checkbox" class="h-5 w-5 rounded border-gray-500 bg-gray-700 text-[#118AB2] focus:ring-[#118AB2]">
+                            <span class="ml-3 text-gray-200">Siento ansiedad si no encuentro mi móvil.</span>
+                        </label>
+                        <label class="quiz-option flex items-center bg-[#2D3748] p-4 rounded-lg cursor-pointer border border-gray-700">
+                            <input type="checkbox" class="h-5 w-5 rounded border-gray-500 bg-gray-700 text-[#118AB2] focus:ring-[#118AB2]">
+                            <span class="ml-3 text-gray-200">Lo primero que hago al despertar es revisar el móvil.</span>
+                        </label>
+                        <label class="quiz-option flex items-center bg-[#2D3748] p-4 rounded-lg cursor-pointer border border-gray-700">
+                            <input type="checkbox" class="h-5 w-5 rounded border-gray-500 bg-gray-700 text-[#118AB2] focus:ring-[#118AB2]">
+                            <span class="ml-3 text-gray-200">Uso el móvil en el baño casi siempre.</span>
+                        </label>
+                        <label class="quiz-option flex items-center bg-[#2D3748] p-4 rounded-lg cursor-pointer border border-gray-700">
+                            <input type="checkbox" class="h-5 w-5 rounded border-gray-500 bg-gray-700 text-[#118AB2] focus:ring-[#118AB2]">
+                            <span class="ml-3 text-gray-200">"Solo 5 minutos" se convierten en una hora o más.</span>
+                        </label>
+                        <label class="quiz-option flex items-center bg-[#2D3748] p-4 rounded-lg cursor-pointer border border-gray-700">
+                            <input type="checkbox" class="h-5 w-5 rounded border-gray-500 bg-gray-700 text-[#118AB2] focus:ring-[#118AB2]">
+                            <span class="ml-3 text-gray-200">Reviso notificaciones durante conversaciones importantes.</span>
+                        </label>
+                        <label class="quiz-option flex items-center bg-[#2D3748] p-4 rounded-lg cursor-pointer border border-gray-700">
+                            <input type="checkbox" class="h-5 w-5 rounded border-gray-500 bg-gray-700 text-[#118AB2] focus:ring-[#118AB2]">
+                            <span class="ml-3 text-gray-200">Me cuesta concentrarme en una tarea por más de 20 min.</span>
+                        </label>
+                        <label class="quiz-option flex items-center bg-[#2D3748] p-4 rounded-lg cursor-pointer border border-gray-700">
+                            <input type="checkbox" class="h-5 w-5 rounded border-gray-500 bg-gray-700 text-[#118AB2] focus:ring-[#118AB2]">
+                            <span class="ml-3 text-gray-200">El uso del móvil ha causado problemas en mi trabajo o relaciones.</span>
+                        </label>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <button id="reset-quiz" class="px-4 py-2 bg-[#2D3748] text-gray-300 rounded-lg border border-gray-700 hover:bg-[#374151] transition-colors">
+                            Reiniciar Test
+                        </button>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center justify-center">
+                    <div class="chart-container h-[250px] md:h-[300px]">
+                        <canvas id="diagnosisChart"></canvas>
+                    </div>
+                    <div id="diagnosis-result" class="text-center mt-4">
+                        <h3 id="diagnosis-title" class="text-2xl font-bold text-gray-500">Completa el test</h3>
+                        <p id="diagnosis-text" class="text-gray-400 mt-1">Marca las afirmaciones que se aplican a ti para ver tu resultado.</p>
+                        <div id="diagnosis-details" class="mt-4 text-sm text-gray-400 hidden">
+                            <p id="diagnosis-score" class="mb-2"></p>
+                            <p id="diagnosis-advice"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sistema de 21 días -->
+        <section id="sistema" class="mb-16 fade-in">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-white">Parte 3: El Sistema de 21 Días</h2>
+                <p class="mt-2 text-gray-300 max-w-3xl mx-auto">Un plan de acción práctico, dividido en tres semanas, para reconfigurar tus hábitos y tu cerebro.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-br from-[#1A202C] to-[#2D3748] rounded-xl shadow-lg p-6 step-card border-l-[#FFD166] border border-gray-800">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-[#FFD166] flex items-center justify-center mr-3">
+                            <span class="text-[#111111] font-bold">1</span>
+                        </div>
+                        <h3 class="text-2xl font-black text-white">Semana 1: RESET</h3>
+                    </div>
+                    <p class="font-bold text-[#118AB2] mb-4">(Días 1-7)</p>
+                    <p class="text-gray-300 mb-4 font-semibold">Objetivo: Romper el ciclo de la adicción y crear fricción consciente.</p>
+                    <ul class="space-y-3 text-gray-200">
+                        <li class="flex items-start"><span class="font-bold text-[#FFD166] mr-2">➤</span> <strong>Clasificar:</strong> Audita y elimina todas las apps de distracción.</li>
+                        <li class="flex items-start"><span class="font-bold text-[#FFD166] mr-2">➤</span> <strong>Protocolo Detox:</strong> Usa una "caja de detox" fuera del dormitorio.</li>
+                        <li class="flex items-start"><span class="font-bold text-[#FFD166] mr-2">➤</span> <strong>Mini Sabbath:</strong> Desconéctate por 24 horas durante el fin de semana.</li>
+                    </ul>
+                </div>
+                <div class="bg-gradient-to-br from-[#1A202C] to-[#2D3748] rounded-xl shadow-lg p-6 step-card border-l-[#06D6A0] border border-gray-800">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-[#06D6A0] flex items-center justify-center mr-3">
+                            <span class="text-[#111111] font-bold">2</span>
+                        </div>
+                        <h3 class="text-2xl font-black text-white">Semana 2: ORGANIZACIÓN</h3>
+                    </div>
+                    <p class="font-bold text-[#118AB2] mb-4">(Días 8-14)</p>
+                    <p class="text-gray-300 mb-4 font-semibold">Objetivo: Construir nuevos patrones y optimizar tu entorno.</p>
+                    <ul class="space-y-3 text-gray-200">
+                        <li class="flex items-start"><span class="font-bold text-[#06D6A0] mr-2">➤</span> <strong>Ordenar:</strong> Crea una pantalla de inicio minimalista y desactiva notificaciones.</li>
+                        <li class="flex items-start"><span class="font-bold text-[#06D6A0] mr-2">➤</span> <strong>Limpiar:</strong> Establece rutinas diarias y semanales de limpieza digital.</li>
+                        <li class="flex items-start"><span class="font-bold text-[#06D6A0] mr-2">➤</span> <strong>Presupuestar Tiempo:</strong> Registra cómo usas tu tiempo y planifica intencionalmente.</li>
+                    </ul>
+                </div>
+                <div class="bg-gradient-to-br from-[#1A202C] to-[#2D3748] rounded-xl shadow-lg p-6 step-card border-l-[#118AB2] border border-gray-800">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-[#118AB2] flex items-center justify-center mr-3">
+                            <span class="text-white font-bold">3</span>
+                        </div>
+                        <h3 class="text-2xl font-black text-white">Semana 3: PROPÓSITO</h3>
+                    </div>
+                    <p class="font-bold text-[#118AB2] mb-4">(Días 15-21)</p>
+                    <p class="text-gray-300 mb-4 font-semibold">Objetivo: Sostener la transformación y alinearla con tus valores.</p>
+                    <ul class="space-y-3 text-gray-200">
+                        <li class="flex items-start"><span class="font-bold text-[#118AB2] mr-2">➤</span> <strong>Estandarizar:</strong> Crea checklists para tus nuevas rutinas.</li>
+                        <li class="flex items-start"><span class="font-bold text-[#118AB2] mr-2">➤</span> <strong>Encontrar tu Ikigai:</strong> Conecta tu tiempo libre con tu "razón de ser".</li>
+                        <li class="flex items-start"><span class="font-bold text-[#118AB2] mr-2">➤</span> <strong>Trabajo Profundo:</strong> Agenda bloques de concentración sin distracciones.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Transformación -->
+        <section id="transformacion" class="mb-16 fade-in">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-white">Parte 4: La Transformación Visualizada</h2>
+                <p class="mt-2 text-gray-300 max-w-3xl mx-auto">El objetivo no es solo reducir el tiempo de pantalla, sino reasignarlo a actividades que te enriquezcan. Así se ve un día antes y después del detox.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-gradient-to-br from-[#1A202C] to-[#2D3748] rounded-xl shadow-lg p-6 border border-gray-800">
+                    <h3 class="text-xl font-bold text-center text-[#FF6B6B] mb-4">Antes: Día Reactivo</h3>
+                    <p class="text-center text-gray-300 mb-4">Un día dominado por la distracción pasiva y el scroll sin propósito, dejando poco espacio para el crecimiento o el descanso real.</p>
+                    <div class="chart-container">
+                        <canvas id="beforeChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-br from-[#1A202C] to-[#2D3748] rounded-xl shadow-lg p-6 border border-gray-800">
+                    <h3 class="text-xl font-bold text-center text-[#06D6A0] mb-4">Después: Día Intencional</h3>
+                    <p class="text-center text-gray-300 mb-4">El tiempo recuperado de la distracción se invierte en actividades de alto valor que impulsan tu bienestar y tus metas personales.</p>
+                    <div class="chart-container">
+                        <canvas id="afterChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center my-12 border-t pt-8 border-gray-700 fade-in">
+            <h2 class="text-3xl font-black text-white">Recupera tu atención, recupera tu vida.</h2>
+            <p class="text-lg text-[#118AB2] mt-4 max-w-2xl mx-auto">La desintoxicación digital no es el final, es el comienzo de una relación más saludable y con propósito con la tecnología.</p>
+            
+            <!-- Botón de Comienza tu Desintoxicación modificado a un enlace directo -->
+            <div class="mt-8">
+                <a href="https://vivirsinscroll.gumroad.com/l/vivirsinscroll" target="_blank" class="inline-block px-6 py-3 bg-gradient-to-r from-[#118AB2] to-[#06D6A0] text-white font-bold rounded-lg hover:opacity-90 transition-opacity">
+                    Comienza tu Desintoxicación
+                </a>
+            </div>
+            
+            <!-- Sección de compra -->
+            <div class="mt-12 bg-gradient-to-br from-[#1A202C] to-[#2D3748] rounded-xl shadow-lg p-8 border border-gray-800 max-w-2xl mx-auto">
+                <h3 class="text-2xl font-bold text-white mb-4">Completa tu Transformación Digital</h3>
+                <p class="text-gray-300 mb-6">Obtén el sistema completo de 21 días con todas las plantillas, ejercicios y herramientas para recuperar tu atención y productividad.</p>
+                
+                <div class="bg-[#2D3748] rounded-lg p-6 mb-6 border border-gray-700">
+                    <div class="flex justify-between items-center mb-4">
+                        <h4 class="text-xl font-bold text-white">Ebook: Desintoxicación Digital</h4>
+                        <div class="text-2xl font-bold text-[#06D6A0]">$7</div>
+                    </div>
+                    <ul class="text-gray-300 space-y-2 mb-4">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-[#06D6A0] mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Sistema completo de 21 días paso a paso</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-[#06D6A0] mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>17 ejercicios prácticos con plantillas descargables</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-[#06D6A0] mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Métodos basados en neurociencia y organización japonesa</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-[#06D6A0] mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Acceso inmediato después de la compra</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Botón de Comprar Ahora modificado a un enlace directo -->
+                <a href="https://vivirsinscroll.gumroad.com/l/vivirsinscroll" target="_blank" class="w-full inline-block bg-gradient-to-r from-[#FFD166] to-[#FF6B6B] text-[#111111] font-bold py-4 rounded-lg hover:opacity-90 transition-opacity text-lg">
+                    Comprar Ahora - $7
+                </a>
+                <p class="text-gray-400 text-sm mt-4">Pago seguro • Garantía de 30 días • Acceso inmediato</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- El Modal de compra (div#purchase-modal) ha sido eliminado -->
+
+    <script>
+        // Configuración de tema oscuro
+        const darkThemePalette = {
+            red: '#FF6B6B',
+            yellow: '#FFD166',
+            green: '#06D6A0',
+            blue: '#118AB2',
+            lightText: '#F7FAFC',
+            gridColor: 'rgba(255, 255, 255, 0.2)',
+            cardBg: '#2D3748',
+            bodyBg: '#111111'
+        };
+
+        // Función para ajustar etiquetas largas
+        const wrapLabel = (label, maxLength = 16) => {
+            if (label.length <= maxLength) {
+                return label;
+            }
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + ' ' + word).length > maxLength && currentLine.length > 0) {
+                    lines.push(currentLine);
+                    currentLine = word;
+                } else {
+                    currentLine = currentLine ? currentLine + ' ' + word : word;
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        };
+
+        // Configuración de tooltips
+        const tooltipTitleCallback = {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                              return label.join(' ');
+                            } else {
+                              return label;
+                            }
+                        }
+                    }
+                }
+            }
+        };
+
+        // Animación de entrada al hacer scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        fadeElements.forEach(el => {
+            observer.observe(el);
+        });
+
+        // Gráfico de impacto cerebral
+        const brainImpactCtx = document.getElementById('brainImpactChart').getContext('2d');
+        new Chart(brainImpactCtx, {
+            type: 'radar',
+            data: {
+                labels: ['Concentración', 'Memoria a Corto Plazo', 'Niveles de Cortisol (Estrés)', 'Regulación Emocional', 'Control de Impulsos'],
+                datasets: [{
+                    label: 'Impacto del Scroll Excesivo',
+                    data: [3, 4, 8, 3, 2],
+                    backgroundColor: 'rgba(255, 107, 107, 0.4)',
+                    borderColor: darkThemePalette.red,
+                    borderWidth: 2,
+                    pointBackgroundColor: darkThemePalette.red,
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        angleLines: { color: darkThemePalette.gridColor },
+                        grid: { color: darkThemePalette.gridColor },
+                        pointLabels: { 
+                            font: { size: 12 }, 
+                            color: darkThemePalette.lightText 
+                        },
+                        suggestedMin: 0,
+                        suggestedMax: 10,
+                        ticks: {
+                           display: false,
+                           stepSize: 2,
+                           backdropColor: 'rgba(0,0,0,0)'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: { color: darkThemePalette.lightText }
+                    },
+                    tooltip: tooltipTitleCallback.plugins.tooltip
+                }
+            }
+        });
+
+        // Gráfico de diagnóstico
+        const diagnosisCtx = document.getElementById('diagnosisChart').getContext('2d');
+        const diagnosisChart = new Chart(diagnosisCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Nivel de Dependencia', 'Restante'],
+                datasets: [{
+                    data: [0, 7],
+                    backgroundColor: [darkThemePalette.cardBg, darkThemePalette.cardBg],
+                    borderColor: [darkThemePalette.bodyBg],
+                    borderWidth: 4,
+                    circumference: 180,
+                    rotation: -90,
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                responsive: true,
+                cutout: '70%',
+                plugins: {
+                    legend: { display: false },
+                    tooltip: { enabled: false }
+                }
+            }
+        });
+
+        // Lógica del quiz
+        const quizOptions = document.getElementById('quiz-options');
+        const diagnosisTitle = document.getElementById('diagnosis-title');
+        const diagnosisText = document.getElementById('diagnosis-text');
+        const diagnosisDetails = document.getElementById('diagnosis-details');
+        const diagnosisScore = document.getElementById('diagnosis-score');
+        const diagnosisAdvice = document.getElementById('diagnosis-advice');
+        const resetQuizButton = document.getElementById('reset-quiz');
+        // const startDetoxButton = document.getElementById('start-detox'); // Eliminado el script del botón ya que ahora es un enlace
+
+        quizOptions.addEventListener('change', () => {
+            const checkedCount = quizOptions.querySelectorAll('input[type="checkbox"]:checked').length;
+            let title = '';
+            let text = '';
+            let color = darkThemePalette.cardBg;
+            let dataValue = checkedCount;
+            let scoreText = '';
+            let adviceText = '';
+
+            if (checkedCount >= 0 && checkedCount <= 2) {
+                title = 'Uso Saludable';
+                text = 'Mantienes un buen control. ¡Sigue así!';
+                color = darkThemePalette.green;
+                scoreText = `Puntuación: ${checkedCount}/7`;
+                adviceText = 'Continúa con tus hábitos actuales y mantén el equilibrio.';
+            } else if (checkedCount >= 3 && checkedCount <= 4) {
+                title = 'Zona de Riesgo';
+                text = 'Tu dependencia es moderada. Es buen momento para actuar.';
+                color = darkThemePalette.yellow;
+                scoreText = `Puntuación: ${checkedCount}/7`;
+                adviceText = 'Considera implementar algunas estrategias del plan de 21 días.';
+            } else {
+                title = 'Adicción Digital';
+                text = 'Requieres un detox inmediato. ¡Este sistema es para ti!';
+                color = darkThemePalette.red;
+                scoreText = `Puntuación: ${checkedCount}/7`;
+                adviceText = 'Te beneficiarás enormemente del programa completo de desintoxicación.';
+            }
+
+            diagnosisTitle.textContent = title;
+            diagnosisTitle.style.color = color;
+            diagnosisText.textContent = text;
+            diagnosisScore.textContent = scoreText;
+            diagnosisAdvice.textContent = adviceText;
+            diagnosisDetails.classList.remove('hidden');
+            
+            diagnosisChart.data.datasets[0].data[0] = dataValue;
+            diagnosisChart.data.datasets[0].data[1] = 7 - dataValue;
+            diagnosisChart.data.datasets[0].backgroundColor[0] = color;
+            diagnosisChart.update();
+        });
+
+        // Botón de reinicio del quiz
+        resetQuizButton.addEventListener('click', () => {
+            const checkboxes = quizOptions.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = false;
+            });
+            
+            diagnosisTitle.textContent = 'Completa el test';
+            diagnosisTitle.style.color = darkThemePalette.cardBg;
+            diagnosisText.textContent = 'Marca las afirmaciones que se aplican a ti para ver tu resultado.';
+            diagnosisDetails.classList.add('hidden');
+            
+            diagnosisChart.data.datasets[0].data[0] = 0;
+            diagnosisChart.data.datasets[0].data[1] = 7;
+            diagnosisChart.data.datasets[0].backgroundColor[0] = darkThemePalette.cardBg;
+            diagnosisChart.update();
+        });
+
+        // Gráficos de antes y después
+        const kakeiboLabels = ['Necesidad (Trabajo, etc)', 'Conexión (Familia, Amigos)', 'Creación (Hobbies, Aprender)', 'Recarga (Ejercicio, Descanso)', 'Distracción Pasiva (Scroll)'];
+        const wrappedKakeiboLabels = kakeiboLabels.map(label => wrapLabel(label));
+
+        const beforeCtx = document.getElementById('beforeChart').getContext('2d');
+        new Chart(beforeCtx, {
+            type: 'bar',
+            data: {
+                labels: wrappedKakeiboLabels,
+                datasets: [{
+                    label: 'Horas por día',
+                    data: [8, 1, 0.5, 1, 5.5],
+                    backgroundColor: [
+                        darkThemePalette.blue,
+                        darkThemePalette.green,
+                        darkThemePalette.yellow,
+                        '#83C5BE', // Color adicional para diferenciar Recarga
+                        darkThemePalette.red
+                    ],
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        stacked: true,
+                        grid: { display: false, color: darkThemePalette.gridColor },
+                        ticks: { color: darkThemePalette.lightText },
+                        max: 16
+                    },
+                    y: {
+                        stacked: true,
+                        grid: { display: false },
+                        ticks: { color: darkThemePalette.lightText }
+                    }
+                },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: tooltipTitleCallback.plugins.tooltip
+                }
+            }
+        });
+
+        const afterCtx = document.getElementById('afterChart').getContext('2d');
+        new Chart(afterCtx, {
+            type: 'bar',
+            data: {
+                labels: wrappedKakeiboLabels,
+                datasets: [{
+                    label: 'Horas por día',
+                    data: [8, 2, 2, 2.5, 1.5],
+                    backgroundColor: [
+                        darkThemePalette.blue,
+                        darkThemePalette.green,
+                        darkThemePalette.yellow,
+                        '#83C5BE', // Color adicional para diferenciar Recarga
+                        darkThemePalette.red
+                    ],
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                maintainAspectRatio: false,
+                scales: {
+                     x: {
+                        stacked: true,
+                        grid: { display: false, color: darkThemePalette.gridColor },
+                        ticks: { color: darkThemePalette.lightText },
+                        max: 16
+                    },
+                    y: {
+                        stacked: true,
+                        grid: { display: false },
+                        ticks: { color: darkThemePalette.lightText }
+                    }
+                },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: tooltipTitleCallback.plugins.tooltip
+                }
+            }
+        });
+
+        // La lógica del embudo de compra y el modal han sido eliminados ya que se usa un enlace externo
+    </script>
+</body>
+</html>
